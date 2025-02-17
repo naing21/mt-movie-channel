@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+import useFetch from '../hooks/useFetch'; 
 import Divider from './Divider';
 import { IoClose } from 'react-icons/io5';
 
