@@ -1,5 +1,5 @@
 import Detail from "./components/Detail"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import AppStarter from "./pages/AppStarter"
 import AppIndex from "./pages/AppIndex"
 import Register from "./components/Register"
@@ -12,7 +12,7 @@ function App() {
 
   return (
 
-   <BrowserRouter>
+   <HashRouter>
      <Routes>
        <Route path="/" element={<AppStarter/>}>
        <Route path="" index={true} element={<AppIndex/>} />
@@ -25,7 +25,7 @@ function App() {
        <Route path="/admin" element={<Protected allowedRoles={['admin']}><h1>Admin Page</h1></Protected>} />
        </Route>
      </Routes>
-   </BrowserRouter>
+   </HashRouter>
 
   )
 }
