@@ -11,7 +11,10 @@ function AppStarter() {
       <div className='pt-16'>
         <Outlet/>
       </div>
+      <div className='fixed w-full bottom-0'>
+
       <Footer />
+      </div>
   
     </>
   )
