@@ -3,6 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch'; 
 import Divider from './Divider';
 import { IoClose } from 'react-icons/io5';
+import { Loader } from 'lucide-react';
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
@@ -42,7 +43,9 @@ const writers = cast?.crew?.filter(
   const [showTrailer, setShowTrailer] = useState(false);
 
   if (contentLoading || castLoading || trailerLoading) {
-    return <p className="text-white flex justify-center text-center text-3xl">Loading...</p>;
+    return  <p className="text-white flex items-center justify-center">
+    <Loader className='w-22 h-22 mt-6 mb-6 animate-spin'/>
+    </p>;
   }
 
   if (contentError || castError || trailerError) {
@@ -136,7 +139,9 @@ const writers = cast?.crew?.filter(
 {/* Related Movies Section */}
 <h2 className="font-mono text-yellow-500 text-lg mt-6">Related Movies:</h2>
 {relatedLoading ? (
-  <p className="text-white">Loading...</p>
+ <p className="text-white flex items-center justify-center">
+    <Loader className='w-22 h-22 mt-6 mb-6 animate-spin'/>
+    </p>
 ) : relatedError ? (
   <p className="text-red-500">Error loading related movies.</p>
 ) : (
@@ -165,7 +170,9 @@ const writers = cast?.crew?.filter(
 {/* Trending TV Series Section */}
 <h2 className="font-serif text-yellow-500 text-lg mt-6">Trending TV Series:</h2>
 {trendingLoading ? (
-  <p className="text-white">Loading...</p>
+   <p className="text-white flex items-center justify-center">
+    <Loader className='w-22 h-22 mt-6 mb-6 animate-spin'/>
+    </p>
 ) : trendingError ? (
   <p className="text-red-500">Error loading trending TV series.</p>
 ) : (

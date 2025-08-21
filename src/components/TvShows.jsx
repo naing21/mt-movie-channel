@@ -24,7 +24,9 @@ const TvShows = () => {
     fetchTvShows();
   }, []);
 
-  if (loading) return <p className="text-white">Loading TV Shows...</p>;
+  if (loading) return   <p className="text-white flex items-center justify-center">
+    <Loader className='w-22 h-22 mt-6 mb-6 animate-spin'/>
+    </p>;
 
   return (
     <div className="container mx-auto p-5">
